@@ -1,18 +1,17 @@
-
-
+--
 
 CREATE OR REPLACE PROCEDURE add_new_book (
-    p_title IN VARCHAR2,
-    p_author IN VARCHAR2,
-    p_publisher IN VARCHAR2,
-    p_year_published IN NUMBER,
-    p_genre_id IN NUMBER,
-    p_branch_id IN NUMBER,
-    p_isbn IN VARCHAR2,
-    p_copies_available IN NUMBER
+    p_title  books.title %TYPE,
+    p_author  books.author %TYPE,
+    p_publisher  books.publisher %TYPE,
+    p_year_published  books.year_published %TYPE,
+    p_genre_id  books.genre_id %TYPE,
+    p_branch_id  books.branch_id %TYPE,
+    p_isbn  books.isbn %TYPE,
+    p_copies_available  books.copies_available %TYPE
 ) AS
-    v_genre_exists NUMBER;
-    v_branch_exists NUMBER;
+    v_genre_exists  books.genre_id %TYPE;
+    v_branch_exists  books.branch_id %TYPE;
 BEGIN
     -- Check if genre exists
     SELECT COUNT(*)
