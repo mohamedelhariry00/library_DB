@@ -1,10 +1,11 @@
+--
 
 -- Update Member Info
   
 CREATE OR REPLACE PROCEDURE update_member_info (
     p_member_id members.id %TYPE,
     p_name IN members.name %TYPE,
-    p_contact_number members.contact_number %TYPE,
+    p_contact_number members.phone %TYPE,
     p_email IN members.email %TYPE,
     p_address IN members.address %TYPE,
     p_branch_id IN members.branch_id %TYPE
@@ -13,7 +14,7 @@ BEGIN
     -- Update the member details
     UPDATE members
     SET name = p_name,
-        contact_number = p_contact_number,
+        phone = p_contact_number,
         email = p_email,
         address = p_address,
         branch_id = p_branch_id
