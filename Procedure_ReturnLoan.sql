@@ -1,12 +1,13 @@
+--
 
 -- Return a Book
 
 CREATE OR REPLACE PROCEDURE return_book (
     p_loan_id IN NUMBER
 ) AS
-    v_book_id NUMBER;
+    v_book_id books.id %TYPE;
     v_due_date DATE;
-    v_fine_amount NUMBER;
+    v_fine_amount fines.fine_amount %TYPE;
     v_days_late NUMBER;
 BEGIN
     -- Retrieve book ID and due date for the loan
